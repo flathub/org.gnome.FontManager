@@ -9,6 +9,7 @@ finish-args:
   - --socket=wayland
   - --socket=fallback-x11
   - --share=ipc
+  - --share=network
 
   # XDG Data/Fonts location
   - --filesystem=xdg-data/fonts:create
