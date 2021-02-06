@@ -36,8 +36,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/FontManager/font-manager.git
-        tag: 0.8.3
-        commit: 2b9ed42fdf1f064d7f331750ccca13317a7be150
+        tag: 0.8.4-1
+        commit: 8788a250c645ea1150aee1ef589f91fef706423f
     post-install:
       # Changes to minetype support are currently on the roadmap
       - rm /app/share/applications/mimeinfo.cache
