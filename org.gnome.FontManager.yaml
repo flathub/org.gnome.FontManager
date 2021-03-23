@@ -36,12 +36,10 @@ modules:
     sources:
       - type: git
         url: https://github.com/FontManager/font-manager.git
-        tag: 0.8.4-1
-        commit: 8788a250c645ea1150aee1ef589f91fef706423f
+        tag: 0.8.5
+        commit: 10171c61e68dab82608ef14cb6bb2851ad0446fa
     post-install:
       # Changes to minetype support are currently on the roadmap
       - rm /app/share/applications/mimeinfo.cache
       - desktop-file-edit /app/share/applications/org.gnome.FontManager.desktop --remove-key=MimeType
-      # Creative workaround until upstream implements release versions
-      - sed -i 's|date="2020-07-10"|date="2020-12-04"|gm' /app/share/metainfo/org.gnome.FontManager.appdata.xml
 
