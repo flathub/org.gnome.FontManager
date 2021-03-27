@@ -1,6 +1,6 @@
 app-id: org.gnome.FontManager
 runtime: org.gnome.Platform
-runtime-version: '3.38'
+runtime-version: '40'
 sdk: org.gnome.Sdk
 
 command: font-manager
@@ -36,8 +36,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/FontManager/font-manager.git
-        tag: 0.8.5
-        commit: 10171c61e68dab82608ef14cb6bb2851ad0446fa
+        tag: 0.8.5-1
+        commit: 3ad5cc842b90614d8c06d4a4a7428b906a982aea
     post-install:
       # Changes to minetype support are currently on the roadmap
       - rm /app/share/applications/mimeinfo.cache
