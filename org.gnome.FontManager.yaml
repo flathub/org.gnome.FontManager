@@ -36,8 +36,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/FontManager/font-manager.git
-        tag: 0.8.7
-        commit: 42aa9e53185b17fb7507076e042d9dd0fa78d330
+        tag: 0.8.8
+        commit: 72718e28ecd80f82b8bca570efdf3df25616de66
         x-checker-data:
           type: git
           tag-pattern: ^([\\d.]+)$
