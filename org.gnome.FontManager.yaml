@@ -40,7 +40,7 @@ modules:
         commit: 72718e28ecd80f82b8bca570efdf3df25616de66
         x-checker-data:
           type: git
-          tag-pattern: ^([\\d.]+)$
+          tag-pattern: ^([\d.]+)$
     post-install:
       # Changes to minetype support are currently on the roadmap
       - rm /app/share/applications/mimeinfo.cache
