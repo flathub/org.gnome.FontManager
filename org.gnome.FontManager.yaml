@@ -12,11 +12,11 @@ finish-args:
   - --share=network
 
   # XDG Data/Fonts location
-  - --filesystem=xdg-data/fonts:create
+  - --filesystem=xdg-data/fonts
   - --persist=xdg-data/fonts
 
   # XDG complient locations for font config
-  - --filesystem=xdg-config/fontconfig:create
+  - --filesystem=xdg-config/fontconfig
   - --persist=xdg-config/fontconfig
 
 cleanup:
