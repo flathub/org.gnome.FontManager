@@ -27,6 +27,26 @@ cleanup:
 
 modules:
 
+  - shared-modules/intltool/intltool-0.51.json
+  - shared-modules/libsoup/libsoup-2.4.json
+
+  # Borrowed from Poedit
+  # https://github.com/flathub/net.poedit.Poedit
+  - name: webkit2gtk-4.0
+    buildsystem: cmake-ninja
+    config-opts: 
+      - -DPORT=GTK
+      - -DCMAKE_BUILD_TYPE=Release
+      - -DENABLE_DOCUMENTATION=OFF
+      - -DENABLE_BUBBLEWRAP_SANDBOX=OFF
+      - -DENABLE_WEBDRIVER=OFF
+      - -DENABLE_GAMEPAD=OFF
+      - -DUSE_SOUP2=ON
+    sources:
+      - type: archive
+        url: https://webkitgtk.org/releases/webkitgtk-2.38.6.tar.xz
+        sha256: 1c614c9589389db1a79ea9ba4293bbe8ac3ab0a2234cac700935fae0724ad48b
+
   - name: fontmanager
     buildsystem: meson
     config-opts:
