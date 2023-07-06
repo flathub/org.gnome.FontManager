@@ -1,6 +1,6 @@
 app-id: org.gnome.FontManager
 runtime: org.gnome.Platform
-runtime-version: '42'
+runtime-version: '44'
 sdk: org.gnome.Sdk
 
 command: font-manager
@@ -12,11 +12,11 @@ finish-args:
   - --share=network
 
   # XDG Data/Fonts location
-  - --filesystem=xdg-data/fonts:create
+  - --filesystem=xdg-data/fonts
   - --persist=xdg-data/fonts
 
   # XDG complient locations for font config
-  - --filesystem=xdg-config/fontconfig:create
+  - --filesystem=xdg-config/fontconfig
   - --persist=xdg-config/fontconfig
 
 cleanup:
@@ -26,6 +26,26 @@ cleanup:
   - /app/lib/pkgconfig
 
 modules:
+
+  - shared-modules/intltool/intltool-0.51.json
+  - shared-modules/libsoup/libsoup-2.4.json
+
+  # Borrowed from Poedit
+  # https://github.com/flathub/net.poedit.Poedit
+  - name: webkit2gtk-4.0
+    buildsystem: cmake-ninja
+    config-opts: 
+      - -DPORT=GTK
+      - -DCMAKE_BUILD_TYPE=Release
+      - -DENABLE_DOCUMENTATION=OFF
+      - -DENABLE_BUBBLEWRAP_SANDBOX=OFF
+      - -DENABLE_WEBDRIVER=OFF
+      - -DENABLE_GAMEPAD=OFF
+      - -DUSE_SOUP2=ON
+    sources:
+      - type: archive
+        url: https://webkitgtk.org/releases/webkitgtk-2.38.6.tar.xz
+        sha256: 1c614c9589389db1a79ea9ba4293bbe8ac3ab0a2234cac700935fae0724ad48b
 
   - name: fontmanager
     buildsystem: meson
@@ -40,7 +60,7 @@ modules:
         commit: 72718e28ecd80f82b8bca570efdf3df25616de66
         x-checker-data:
           type: git
-          tag-pattern: ^([\\d.]+)$
+          tag-pattern: ^([\d.]+)$
     post-install:
       # Changes to minetype support are currently on the roadmap
       - rm /app/share/applications/mimeinfo.cache
