@@ -34,7 +34,7 @@ modules:
   # https://github.com/flathub/net.poedit.Poedit
   - name: webkit2gtk-4.0
     buildsystem: cmake-ninja
-    config-opts: 
+    config-opts:
       - -DPORT=GTK
       - -DCMAKE_BUILD_TYPE=Release
       - -DENABLE_DOCUMENTATION=OFF
@@ -46,6 +46,11 @@ modules:
       - type: archive
         url: https://webkitgtk.org/releases/webkitgtk-2.38.6.tar.xz
         sha256: 1c614c9589389db1a79ea9ba4293bbe8ac3ab0a2234cac700935fae0724ad48b
+        x-checker-data:
+          type: html
+          url: https://webkitgtk.org/releases/
+          version-pattern: LATEST-STABLE-(\d[\.\d]+\d)
+          url-template: https://webkitgtk.org/releases/webkitgtk-$version.tar.xz
 
   - name: fontmanager
     buildsystem: meson
