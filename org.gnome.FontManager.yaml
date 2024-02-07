@@ -52,8 +52,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/libjxl/libjxl.git
-        tag: v0.8.2
-        commit: 954b460768c08a147abf47689ad69b0e7beff65e
+        tag: v0.9.2
+        commit: 41b8cdab7815c79a060938bfe0c24337e2eb9e54
         disable-shallow-clone: true
         x-checker-data:
           type: git
@@ -71,8 +71,8 @@ modules:
       - -DUSE_SOUP2=ON
     sources:
       - type: archive
-        url: https://webkitgtk.org/releases/webkitgtk-2.42.0.tar.xz
-        sha256: 828f95935861fae583fb8f2ae58cf64c63c178ae2b7c2d6f73070813ad64ed1b
+        url: https://webkitgtk.org/releases/webkitgtk-2.42.5.tar.xz
+        sha256: b64278c1f20b8cfdbfb5ff573c37d871aba74a1db26d9b39f74e8953fe61e749
         x-checker-data:
           type: html
           url: https://webkitgtk.org/releases/
