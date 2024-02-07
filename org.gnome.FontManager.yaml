@@ -11,14 +11,6 @@ finish-args:
   - --share=ipc
   - --share=network
 
-  # XDG Data/Fonts location
-  - --filesystem=xdg-data/fonts
-  - --persist=xdg-data/fonts
-
-  # XDG complient locations for font config
-  - --filesystem=xdg-config/fontconfig
-  - --persist=xdg-config/fontconfig
-
 cleanup:
   - /app/include
   - /app/lib/*.a
@@ -45,7 +37,7 @@ modules:
       - '*'
 
   - name: libjxl # Remove when runtime is updated to 45
-    buildsystem: cmake
+    buildsystem: cmake-ninja
     config-opts:
       - -DCMAKE_BUILD_TYPE=Release
       - -DBUILD_TESTING=OFF
