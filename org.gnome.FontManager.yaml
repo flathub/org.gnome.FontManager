@@ -68,7 +68,6 @@ modules:
       - -DENABLE_BUBBLEWRAP_SANDBOX=OFF
       - -DENABLE_WEBDRIVER=OFF
       - -DENABLE_GAMEPAD=OFF
-      - -DUSE_SOUP2=ON
     sources:
       - type: archive
         url: https://webkitgtk.org/releases/webkitgtk-2.44.2.tar.xz
