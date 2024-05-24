@@ -58,6 +58,13 @@ modules:
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
+          
+  - name: backtrace
+    buildsystem: autotools
+    sources:
+      - type: archive
+        url: https://github.com/ianlancetaylor/libbacktrace/archive/7ead8c1ea2f4aeafe9c5b9ef8a9461a9ba781aa8.zip
+        sha256: 3b07ffe9a6302ccfdf5771ab8631814303f5bc15d19a2f5a1907c64a391ec29f
 
   - name: webkit2gtk-4.0
     buildsystem: cmake-ninja
@@ -68,11 +75,10 @@ modules:
       - -DENABLE_BUBBLEWRAP_SANDBOX=OFF
       - -DENABLE_WEBDRIVER=OFF
       - -DENABLE_GAMEPAD=OFF
-      - -DUSE_SOUP2=ON
     sources:
       - type: archive
-        url: https://webkitgtk.org/releases/webkitgtk-2.42.5.tar.xz
-        sha256: b64278c1f20b8cfdbfb5ff573c37d871aba74a1db26d9b39f74e8953fe61e749
+        url: https://webkitgtk.org/releases/webkitgtk-2.44.2.tar.xz
+        sha256: 523f42c8ff24832add17631f6eaafe8f9303afe316ef1a7e1844b952a7f7521b
         x-checker-data:
           type: html
           url: https://webkitgtk.org/releases/
@@ -88,8 +94,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/FontManager/font-manager.git
-        tag: 0.8.8
-        commit: 72718e28ecd80f82b8bca570efdf3df25616de66
+        tag: 0.8.9
+        commit: 6d2048ba477b686384fef6c5dd44008389605aaf
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
