@@ -1,6 +1,6 @@
 app-id: org.gnome.FontManager
 runtime: org.gnome.Platform
-runtime-version: '45'
+runtime-version: '46'
 sdk: org.gnome.Sdk
 
 command: font-manager
@@ -36,28 +36,12 @@ modules:
     no-autogen: true
     make-install-args:
       - prefix=${FLATPAK_DEST}
-
     sources:
       - type: archive
         url: https://dotat.at/prog/unifdef/unifdef-2.12.tar.xz
         sha256: 43ce0f02ecdcdc723b2475575563ddb192e988c886d368260bc0a63aee3ac400
     cleanup:
       - '*'
-
-  - name: libjxl # Remove when runtime is updated to 45
-    buildsystem: cmake-ninja
-    config-opts:
-      - -DCMAKE_BUILD_TYPE=Release
-      - -DBUILD_TESTING=OFF
-    sources:
-      - type: git
-        url: https://github.com/libjxl/libjxl.git
-        tag: v0.10.3
-        commit: 4a3b22d2600f92d8706fb72d85d52bfee2acbd54
-        disable-shallow-clone: true
-        x-checker-data:
-          type: git
-          tag-pattern: ^v([\d.]+)$
 
   - name: backtrace
     buildsystem: autotools
