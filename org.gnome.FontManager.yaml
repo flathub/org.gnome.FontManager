@@ -1,4 +1,4 @@
-app-id: org.gnome.FontManager
+app-id: com.github.FontManager.FontManager
 runtime: org.gnome.Platform
 runtime-version: '45'
 sdk: org.gnome.Sdk
@@ -102,6 +102,6 @@ modules:
     post-install:
       # Changes to minetype support are currently on the roadmap
       - rm /app/share/applications/mimeinfo.cache
-      - sed -i '6 i <developer_name>Font Manager project</developer_name>' /app/share/metainfo/org.gnome.FontManager.appdata.xml
-      - desktop-file-edit /app/share/applications/org.gnome.FontManager.desktop --remove-key=MimeType
+      - sed -i '6 i <developer_name>Font Manager project</developer_name>' /app/share/metainfo/com.github.FontManager.FontManager.appdata.xml
+      - desktop-file-edit /app/share/applications/com.github.FontManager.FontManager.desktop --remove-key=MimeType
 
