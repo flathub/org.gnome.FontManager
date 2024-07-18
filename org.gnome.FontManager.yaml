@@ -87,9 +87,3 @@ modules:
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
-    post-install:
-      # Changes to minetype support are currently on the roadmap
-      - rm /app/share/applications/mimeinfo.cache
-      - sed -i '6 i <developer_name>Font Manager project</developer_name>' /app/share/metainfo/org.gnome.FontManager.appdata.xml
-      - desktop-file-edit /app/share/applications/org.gnome.FontManager.desktop --remove-key=MimeType
-
