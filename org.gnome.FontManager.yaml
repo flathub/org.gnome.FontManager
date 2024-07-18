@@ -19,11 +19,15 @@ finish-args:
   - --filesystem=xdg-config/fontconfig
   - --persist=xdg-config/fontconfig
 
+rename-desktop-file: com.github.FontManager.FontManager.desktop
+rename-appdata-file: com.github.FontManager.FontManager.appdata.xml
+rename-icon: com.github.FontManager.FontManager
+
 cleanup:
-  - /app/include
-  - /app/lib/*.a
-  - /app/lib/*.la
-  - /app/lib/pkgconfig
+  - /include
+  - "*.a"
+  - "*.la"
+  - /lib/pkgconfig
 
 modules:
 
