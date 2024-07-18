@@ -21,8 +21,8 @@ finish-args:
 
 cleanup:
   - /include
-  - "*.a"
-  - "*.la"
+  - '*.a'
+  - '*.la'
   - /lib/pkgconfig
 
 modules:
@@ -38,8 +38,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/FontManager/font-manager.git
-        tag: 0.8.9
-        commit: 6d2048ba477b686384fef6c5dd44008389605aaf
+        tag: 0.9.0
+        commit: 091d2896d623c3e5aac7613a95da694a0b36699a
         x-checker-data:
           type: git
           tag-pattern: ^([\d.]+)$
